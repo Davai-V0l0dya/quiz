@@ -27,7 +27,7 @@ class User:
             f":"
             )
         return answer
-    def feedback(self,question: Question, positive = True):
+    def feedback(self,question: Question, positive     = True):
         if positive:
             self.points += question.points
             print(f"Верный ответ!\n"
@@ -59,4 +59,9 @@ class Quiz:
             result  = questoin.check(answer)
             self.user.feedback(questoin, positive=result)
         self.user.end()
+
+
+class JSONReader:
+    def __init__(self, path):
+        self.path = path
 
